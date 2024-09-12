@@ -21,7 +21,7 @@ class BakingAPI:
             ''' Avoid garbage in, error checking '''
             # validate name
             name = body.get('name')
-            uo = Peanut(name==name)
+            uo = Peanut(name=name)
         
             user = uo.create()
             # success returns json of user
