@@ -16,8 +16,7 @@ from api.baking import baking_api
 # database migrations
 from model.users import initUsers
 from model.players import initPlayers
-from model.bakings import initBakings
-
+from model.bakings import initPeanut
 # setup App pages
 from projects.projects import app_projects # Blueprint directory import projects definition
 
@@ -58,14 +57,14 @@ custom_cli = AppGroup('custom', help='Custom commands')
 def generate_data():
     initUsers()
     initPlayers()
-    initBakings()
+    initPeanut()
 
 # Register the custom command group with the Flask application
 app.cli.add_command(custom_cli)
 # @app.before_first_request
 def activate_job():
     initUsers()
-    initBakings()
+    initPeanut()
         
 # this runs the application on the development server
 if __name__ == "__main__":
